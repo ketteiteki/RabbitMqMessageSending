@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqAspNetCore.Sender", "RabbitMqAspNetCore.Sender\RabbitMqAspNetCore.Sender.csproj", "{73953EE1-A8AC-4224-B431-3953B5467887}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqAspNetCore.Receiver", "RabbitMqAspNetCore.Receiver\RabbitMqAspNetCore.Receiver.csproj", "{6A5568A2-B799-4F57-BD33-E7619A59F0A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqAspNetCore.Models", "RabbitMqAspNetCore.Models\RabbitMqAspNetCore.Models.csproj", "{C1C2BDD6-DDD2-452B-8954-2E4F02B2CD0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73953EE1-A8AC-4224-B431-3953B5467887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73953EE1-A8AC-4224-B431-3953B5467887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73953EE1-A8AC-4224-B431-3953B5467887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73953EE1-A8AC-4224-B431-3953B5467887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A5568A2-B799-4F57-BD33-E7619A59F0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A5568A2-B799-4F57-BD33-E7619A59F0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A5568A2-B799-4F57-BD33-E7619A59F0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A5568A2-B799-4F57-BD33-E7619A59F0A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1C2BDD6-DDD2-452B-8954-2E4F02B2CD0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C2BDD6-DDD2-452B-8954-2E4F02B2CD0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C2BDD6-DDD2-452B-8954-2E4F02B2CD0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C2BDD6-DDD2-452B-8954-2E4F02B2CD0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
