@@ -14,3 +14,4 @@ class Program
                 builder.UseStartup<Startup>();
             });
 }
+

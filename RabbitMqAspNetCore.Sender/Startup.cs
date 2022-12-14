@@ -1,4 +1,5 @@
 ﻿using MassTransit;
+using RabbitMqAspNetCore.Models;
 
 namespace RabbitMqAspNetCore.Sender;
 

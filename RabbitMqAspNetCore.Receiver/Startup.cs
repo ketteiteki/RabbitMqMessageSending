@@ -43,7 +43,8 @@ public class Startup
         applicationBuilder.UseHttpsRedirection();
 
         applicationBuilder.UseRouting();
-
+        
+        
         applicationBuilder.UseEndpoints(builder =>
         {
             builder.MapControllers();

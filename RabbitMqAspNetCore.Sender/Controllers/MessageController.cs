@@ -8,18 +8,21 @@ namespace RabbitMqAspNetCore.Sender.Controllers;
 [ApiController]
 public class MessageController : ControllerBase
 {
+    IRequestClient<Message> _client;
+    
     private readonly IPublishEndpoint _publishEndpoint;
 
-    public MessageController(IPublishEndpoint publishEndpoint)
+    public MessageController(IPublishEndpoint publishEndpoint, IRequestClient<Message> client)
     {
         _publishEndpoint = publishEndpoint;
+        _client = client;
     }
 
     [HttpPost]
     public async Task<IActionResult> SendMessage([FromBody] Message message)
     {
-        await _publishEndpoint.Publish(message);
+        var response = await _client.GetResponse<ResponseModel>(message);
 
-        return Ok();
+        return Ok(response.Message);
     }
 }
