@@ -8,13 +8,10 @@ namespace RabbitMqAspNetCore.Sender.Controllers;
 [ApiController]
 public class MessageController : ControllerBase
 {
-    IRequestClient<Message> _client;
-    
-    private readonly IPublishEndpoint _publishEndpoint;
+    private readonly IRequestClient<Message> _client;
 
-    public MessageController(IPublishEndpoint publishEndpoint, IRequestClient<Message> client)
+    public MessageController(IRequestClient<Message> client)
     {
-        _publishEndpoint = publishEndpoint;
         _client = client;
     }
 

@@ -21,6 +21,8 @@ public class Startup
                     h.Password("guest");
                 });
             });
+            
+            config.AddRequestClient<Message>();
         });
         
         serviceCollection.AddMassTransitHostedService();

@@ -11,7 +11,7 @@ public class MessageConsumer : IConsumer<Message>
         
         await context.RespondAsync(new ResponseModel
         {
-            Text = "Success2"
+            Text = "Success"
         });
     }
 }
