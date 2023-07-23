@@ -1,16 +1,40 @@
-namespace RabbitMqAspNetCore.Sender;
 
-public class Program
+using MassTransit;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers();
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddMassTransit(config =>
 {
-    public static void Main(string[] args)
+    config.UsingRabbitMq((ctx, cfg) =>
     {
-        CreateHostBuilder(args).Build().Run();
-    }
+        cfg.Host("localhost", h =>
+        {
+            h.Username("guest");
+            h.Password("guest");
+        });
+    });
+});
+        
+builder.Services.AddMassTransitHostedService();
 
-    private static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(builder =>
-            {
-                builder.UseStartup<Startup>();
-            });
+var app = builder.Build();
+
+if (builder.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+app.UseHttpsRedirection();
+
+app.UseRouting();
+
+app.MapControllers();
+
+app.Run();
