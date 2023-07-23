@@ -3,18 +3,18 @@ using RabbitMqAspNetCore.Models;
 
 namespace RabbitMqAspNetCore.Receiver.Consumers;
 
-public class EventConsumer : IConsumer<IEvent>
+public class EventConsumer : IConsumer<TransactionCreatedEvent>, IConsumer<UserCreatedEvent>
 {
-    public Task Consume(ConsumeContext<IEvent> context)
+    public Task Consume(ConsumeContext<TransactionCreatedEvent> context)
     {
-        if (context.TryGetMessage<TransactionCreatedEvent>(out var transactionCreatedEventContext))
-        {
-            Console.WriteLine($"TransactionCreatedEvent: {transactionCreatedEventContext.Message.TransactionMessage}");
-        }
-        else if (context.TryGetMessage<UserCreatedEvent>(out var userCreatedEventContext))
-        {
-            Console.WriteLine($"UserCreatedEvent: {userCreatedEventContext.Message.UserMessage}");
-        }
+        Console.WriteLine($"TransactionCreatedEvent: {context.Message.TransactionMessage}");
+
+        return Task.CompletedTask;
+    }
+
+    public Task Consume(ConsumeContext<UserCreatedEvent> context)
+    {
+        Console.WriteLine($"UserCreatedEvent: {context.Message.UserMessage}");
 
         return Task.CompletedTask;
     }
